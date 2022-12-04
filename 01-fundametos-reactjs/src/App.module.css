@@ -1,0 +1,13 @@
+.wrapper {
+    max-width: 70rem;
+    margin: 2rem auto;
+
+    /*Caso seja dado um zoom na tela e seja diminuido, para não dar uma sensação de esprimido, dá um pequeno
+    espaçamento entre o conteúdo e o wrapper*/
+    padding: 0 1rem;
+
+    display: grid;
+    grid-template-columns: 256px 1fr;
+    gap:2rem;
+    align-items: flex-start;
+}

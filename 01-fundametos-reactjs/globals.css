@@ -1,0 +1,37 @@
+:root {
+    --white: #fff;
+
+    --gray-7: #121214;
+    --gray-6: #202024;
+    --gray-5: #323238;
+    --gray-4: #7C7C8A;
+    --gray-3: #8D8D99;
+    --gray-2: #C4C4CC;
+    --gray-1: #E1E1E6;
+
+    --green-2: #00875F;
+    --green-1: #00B37E;
+
+    --red: #F75A68
+}
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--gray-7);
+    color: var(--gray-3);
+    /*Torna as fontes mais suaves - pode utilizar sempre*/
+    --webkit-font-smoothing: antialiased;
+}
+
+/*Por padrão, esses elementos não herdam os estilos de fontes do pai*/
+body, input, textarea, button{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    /*Utilizar variáveis relativas para melhorar a acessibilidade. 1rem = 16px*/
+    font-size: 1rem;
+}
