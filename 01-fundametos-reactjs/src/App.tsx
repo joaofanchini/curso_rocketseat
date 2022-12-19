@@ -9,7 +9,10 @@ const App = ():JSX.Element =>  {
         <Header/>
         <div className={styles.wrapper}>
             <Sidebar/>
-            <Post/>
+            <main>
+                <Post/>
+                <Post/>
+            </main>
         </div>
     </>
 };

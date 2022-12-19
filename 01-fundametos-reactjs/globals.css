@@ -21,6 +21,12 @@
     box-sizing: border-box;
 }
 
+/*Sobrescrevendo todas os estilos padrão para efeito de Focus*/
+:focus {
+    outline: transparent;
+    box-shadow: 0 0 0 2px var(--green-2);
+}
+
 body {
     background-color: var(--gray-7);
     color: var(--gray-3);

@@ -1,0 +1,120 @@
+.post {
+    background-color: var(--gray-6);
+    border-radius: 8px;
+    padding: 2.5rem;
+}
+
+/* Aplicar somente esta margem quando existir um componente post depois de um componente post */
+.post + .post {
+    margin-top: 2rem;
+}
+
+.post > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post > header time {
+    font-size: 0.875rem;
+    color: var(--gray-2);
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author img {
+    box-sizing: initial;
+    max-height: 50px;
+    border: 2.5px solid var(--gray-7);
+    border-radius: 8px;
+    outline: 2.5px solid var(--green-1);
+}
+
+.author__info strong{
+    display: block;
+    color: var(--gray-2);
+    line-height: 1.6;
+}
+
+.author__info span {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--gray-4);
+    line-height: 1.6;
+}
+
+.content {
+    line-height: 1.6;
+    color: var(--gray-3);
+    margin-top: 1.5rem;
+}
+
+.content p {
+    margin-top: 1rem;
+}
+
+.content a {
+    font-weight: bold;
+    color: var(--green-2);
+    text-decoration: none;
+}
+
+.content a:hover {
+    color: var(--green-1);
+    cursor: pointer;
+}
+
+.commentForm {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--gray-3);
+}
+
+.commentForm footer {
+    visibility: hidden;
+    max-height: 0;
+}
+
+.commentForm:focus-within footer {
+    visibility: visible;
+    max-height: none;
+}
+
+.commentForm > strong {
+    line-height: 1.6;
+    color: var(--gray-1);
+}
+
+.commentForm textarea {
+    width: 100%;
+    background: var(--gray-7);
+    border: 0;
+    resize: none;
+    height: 6rem;
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--gray-1);
+    line-height: 1.4;
+    margin-top: 1rem;
+}
+
+.commentForm button[type=submit] {
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    border: 0;
+    background: var(--green-2);
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.commentForm button[type=submit]:hover {
+    background-color: var(--green-1);
+}
