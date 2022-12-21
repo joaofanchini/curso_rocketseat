@@ -1,4 +1,5 @@
 import styles from './Post.module.css';
+import Comments from "../comments/Comments";
 
 const Post = ():JSX.Element => {
     return <div className={styles.post}>
@@ -27,6 +28,11 @@ const Post = ():JSX.Element => {
                 <button type='submit'>Publicar</button>
             </footer>
         </form>
+        <div className={styles.commentList}>
+            <Comments/>
+            <Comments/>
+            <Comments/>
+        </div>
     </div>
 }
 
