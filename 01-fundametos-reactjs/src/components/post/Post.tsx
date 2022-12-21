@@ -1,11 +1,12 @@
 import styles from './Post.module.css';
 import Comments from "../comments/Comments";
+import Avatar from "../avatar/Avatar";
 
 const Post = ():JSX.Element => {
     return <div className={styles.post}>
         <header>
             <div className={styles.author}>
-                <img className={styles.img} src="https://avatars.githubusercontent.com/u/31604369?v=4" alt='Imagem do autor'/>
+                <Avatar src={"https://avatars.githubusercontent.com/u/31604369?v=4"} hasBorder={true}/>
                 <div className={styles.author__info}>
                     <strong>João Victor</strong>
                     <span>Web Developer</span>

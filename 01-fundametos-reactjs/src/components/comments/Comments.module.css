@@ -10,7 +10,6 @@
     border-radius: 8px;
 }
 
-
 .commentBox {
     /*Div estará ocupando o maior espaço possível que será identificado pelo display flex*/
     flex: 1;

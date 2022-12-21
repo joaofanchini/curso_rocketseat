@@ -26,14 +26,6 @@
     gap: 1rem;
 }
 
-.author img {
-    box-sizing: initial;
-    max-height: 50px;
-    border: 2.5px solid var(--gray-7);
-    border-radius: 8px;
-    outline: 2.5px solid var(--green-1);
-}
-
 .author__info strong{
     display: block;
     color: var(--gray-2);
