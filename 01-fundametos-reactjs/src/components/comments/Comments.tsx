@@ -2,7 +2,11 @@ import styles from './Comments.module.css';
 import {ThumbsUp, Trash} from "phosphor-react";
 import Avatar from "../avatar/Avatar";
 
-const Comments = () => {
+type Comment = {
+    comment:string
+}
+
+const Comments = ({comment}:Comment) => {
     return <div className={styles.comment}>
         <Avatar src={"https://avatars.githubusercontent.com/u/31604369?v=4"}/>
         <div className={styles.commentBox}>
@@ -16,7 +20,7 @@ const Comments = () => {
                         <Trash size={20}/>
                     </button>
                 </header>
-                <p>Melhor comentário</p>
+                <p>{comment}</p>
             </div>
             <footer>
                 <button>
