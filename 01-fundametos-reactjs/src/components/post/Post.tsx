@@ -18,17 +18,17 @@ type Content = {
 }
 
 type PropsPost = {
-    post: Post
+    post: IPost
 }
 
-export interface Post {
+export interface IPost {
     id: number,
     publishedAt: Date
     author:Author,
     contents: Content[]
 }
 
-const Post = ({post}:PropsPost):JSX.Element => {
+const Post = ({post}:PropsPost):JSX.Element=> {
     const publishedDateTimeFormat = format(post.publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
         locale: ptBR
     })
@@ -48,6 +48,29 @@ const Post = ({post}:PropsPost):JSX.Element => {
         setNewComment('')
     }
 
+    function handleOnChange(event:any){
+        event.target.setCustomValidity('');
+        setNewComment(event.target.value)
+    }
+
+    function handleOnDeleteComment(id:number) {
+        let newComments:string[] = []
+
+        comments.forEach((comment, i) => {
+            if(i !== id){
+                newComments.push(comment)
+            }
+        })
+
+        setComments([...newComments]);
+    }
+
+    function handleOnInvalidComment(event: any) {
+        event.target.setCustomValidity('Este campo é obrigatório');
+    }
+
+    const isNewCommentEmpty = newComment.length === 0
+
     return <div className={styles.post}>
         <header>
             <div className={styles.author}>
@@ -61,12 +84,12 @@ const Post = ({post}:PropsPost):JSX.Element => {
         </header>
 
         <div className={styles.content}>
-            {post.contents.map(content => {
+            {post.contents.map((content,i) => {
                 if(content.type === 'paragraph'){
-                    return <p>{content.content}</p>
+                    return <p key={i}>{content.content}</p>
                 }
                 else if (content.type === 'link') {
-                    return <p><a href='#'>{content.content}</a></p>
+                    return <p key={i}><a href='#'>{content.content}</a></p>
                 }
             })}
         </div>
@@ -75,14 +98,16 @@ const Post = ({post}:PropsPost):JSX.Element => {
             <strong>Deixe seu feedback</strong>
             <textarea name='taComment'
                       value={newComment}
-                      onChange={(event) => setNewComment(event.target.value)}
-                      placeholder='Deixe um comentário'/>
+                      onChange={handleOnChange}
+                      placeholder='Deixe um comentário'
+                      onInvalid={handleOnInvalidComment}
+                      required/>
             <footer>
-                <button type='submit'>Publicar</button>
+                <button type='submit' disabled={isNewCommentEmpty}>Publicar</button>
             </footer>
         </form>
         <div className={styles.commentList}>
-            {comments.map((comment, id) => <Comments key={id} comment={comment}/>)}
+            {comments.map((comment, i) => <Comments key={i} id={i} comment={comment} onDeleteComment={handleOnDeleteComment}/>)}
         </div>
     </div>
 }
