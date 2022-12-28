@@ -31,20 +31,20 @@ const posts: IPost[] = [
     },
     {
         id: 2,
-        publishedAt: new Date('2022-05-10'),
+        publishedAt: new Date('2022-12-10'),
         author: {
             avatarUrl: 'https://avatars.githubusercontent.com/u/31604369?v=4',
-            name:'Joao Teste',
+            name:'Joao Teste 2',
             role:'Web Designer'
         },
         contents:[
             {
                 type:'paragraph',
-                content:'Fala galera!!'
+                content:'Fala galera!! Denovo'
             },
             {
                 type:'paragraph',
-                content:'Acabei de subir mais um projeto no meu portfólio.'
+                content:'Só para lembrar que acabei de subir mais um projeto no meu portfólio.'
             },
             {
                 type:'link',
@@ -55,12 +55,16 @@ const posts: IPost[] = [
 ]
 
 const App = ():JSX.Element =>  {
+    const sortPosts = (postA:IPost,postB:IPost) => (postA.publishedAt.getTime() - postB.publishedAt.getTime()) * -1;
+
     return <>
         <Header/>
         <div className={styles.wrapper}>
             <Sidebar/>
             <main>
-                {posts.map(post => <Post key={post.id} post={post}/>)}
+                {posts
+                    .sort(sortPosts)
+                    .map(post => <Post key={post.id} post={post}/>)}
             </main>
         </div>
     </>
