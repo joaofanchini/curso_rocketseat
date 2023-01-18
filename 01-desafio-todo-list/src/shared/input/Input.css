@@ -1,0 +1,14 @@
+input.custom__input{
+    background-color: var(--gray-500);
+    color: var(--gray-300);
+    border-radius: 8px;
+    padding: 1rem;
+    line-height: 1.4;
+    border: 0;
+    margin: 1rem;
+}
+
+input.custom__input:focus {
+    color: var(--gray-100);
+    box-shadow: 0 0 0 1px var(--purple-dark);
+}

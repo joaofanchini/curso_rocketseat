@@ -1,0 +1,74 @@
+div.task {
+    background-color: var(--gray-400);
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+div.task__container_fieldset {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+fieldset.task__fieldset {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    border: 0;
+}
+
+fieldset.task__fieldset input[type='checkbox'] {
+    display: none;
+}
+
+label.cb-label {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--blue);
+    cursor: pointer;
+    transition: .2s background-color;
+    background-color: var(--blue);
+}
+
+label.cb-label::after {
+    content: '';
+}
+
+span{
+    transition: .2s;
+}
+
+span.task__description--scratched{
+    text-decoration: line-through;
+    color: var(--gray-300);
+}
+
+div.task svg.task__icon {
+    color: var(--gray-300) ;
+    cursor: pointer;
+}
+
+/*Estilização quando realizado o check do input*/
+
+fieldset.task__fieldset input[type='checkbox']:checked ~ label.cb-label {
+    background-color: var(--purple-dark);
+    border: 2px solid transparent;
+}
+
+fieldset.task__fieldset input[type='checkbox']:checked ~ label.cb-label::after {
+    content: '✓';
+}
+
+
+
+
+
+

@@ -30,13 +30,19 @@
 /*Definição de fonte*/
 body {
     --webkit-font-smoothing: antialiased;
-    background-color: var(--gray-600);
+    background-color: var(--gray-700);
     color: var(--gray-100);
 }
 
 /*Por padrão, esses elementos não herdam estilos do componente pai*/
 body, input, textarea, button {
     font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+}
+
+/*Retirando comportamento padrão quando aplicado o estado de focus*/
+:focus {
+    outline: transparent;
 }
 
 

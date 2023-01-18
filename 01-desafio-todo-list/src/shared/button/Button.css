@@ -1,0 +1,13 @@
+button.custom__button{
+    background-color: var(--blue-dark);
+    color: var(--gray-100);
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
