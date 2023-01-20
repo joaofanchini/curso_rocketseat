@@ -6,7 +6,7 @@ div.task {
     gap: 1rem;
     padding: 1rem;
     border-radius: 5px;
-    width: 46rem;
+    width: 100%;
 }
 
 div.task__container_fieldset {
@@ -36,6 +36,10 @@ label.cb-label {
     cursor: pointer;
     transition: .2s background-color;
     background-color: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 label.cb-label::after {

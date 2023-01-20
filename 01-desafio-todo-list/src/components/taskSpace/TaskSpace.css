@@ -1,11 +1,21 @@
+div.task__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 3rem;
+}
+
 div.task__space {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
+    padding: 1rem;
+    max-width: 46rem;
     width: 100%;
-    margin-top: 4rem;
 }
 
 div.task__space__header {
@@ -14,7 +24,7 @@ div.task__space__header {
     align-items: center;
     justify-content: space-between;
     gap: .5rem;
-    width: 46rem;
+    width: 100%;
 }
 
 div.task__space__tasks{
@@ -23,5 +33,6 @@ div.task__space__tasks{
     align-items: center;
     justify-content: flex-start;
     gap: .75rem;
+    width: 100%;
 }
 

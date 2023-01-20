@@ -5,7 +5,7 @@ import TaskSpace from "./components/taskSpace/TaskSpace";
 function App() {
     return <>
         <Header/>
-        <TabCreateTask/>
+        <TabCreateTask applyNegativeMargin={true}/>
         <TaskSpace/>
     </>;
 }

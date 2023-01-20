@@ -5,3 +5,8 @@ div.tab__create__task {
     align-items: center;
     gap: 1rem;
 }
+
+.margin-top-negative-3 {
+    /*Estilo para posicionar o componente com o header*/
+    margin-top: -3rem;
+}
