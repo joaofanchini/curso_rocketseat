@@ -23,10 +23,24 @@ function App() {
         setTasks([...tasks, newTask])
     }
 
+    const handlerOnDeleteTask = (taskUpdated: TaskInterface) => {
+        const filteredTasks = tasks.filter(task => task.id !== taskUpdated.id);
+        setTasks([...filteredTasks]);
+    }
+
+    const handlerUpdateStatusTask = (taskUpdated: TaskInterface) => {
+        const filteredTasks = tasks.filter(task => task.id !== taskUpdated.id);
+        taskUpdated.isActive = !taskUpdated.isActive;
+        setTasks([...filteredTasks, taskUpdated])
+    }
+
     return <>
         <Header/>
-        <TabCreateTask onCreateNewTask={handlerNewTask} applyNegativeMargin={true}/>
-        <TaskSpace tasks={tasks}/>
+        <TabCreateTask applyNegativeMargin={true}
+                       onCreateNewTask={handlerNewTask}/>
+        <TaskSpace tasks={tasks}
+                   onDeleteTask={handlerOnDeleteTask}
+                   onUpdateStatusTask={handlerUpdateStatusTask}/>
     </>;
 }
 

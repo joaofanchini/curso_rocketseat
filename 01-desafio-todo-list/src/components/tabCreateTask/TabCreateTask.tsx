@@ -22,6 +22,7 @@ const TabCreateTask = (props: TabCreateTaskProps) => {
 
     const handlerCreateNewTask = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         props.onCreateNewTask(newTask);
+        setNewTask('');
     }
 
     return <div className={`tab__create__task ${!!props.applyNegativeMargin && 'margin-top-negative-3'}`}>

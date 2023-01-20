@@ -5,7 +5,9 @@ import TaskInfo from "../taskInfo/TaskInfo";
 import {TaskInterface} from "../../App";
 
 interface TaskSpaceProps {
-    tasks: TaskInterface[]
+    tasks: TaskInterface[],
+    onDeleteTask: (task: TaskInterface) => void,
+    onUpdateStatusTask: (task: TaskInterface) => void
 }
 
 const TaskSpace = (props: TaskSpaceProps) => {
@@ -25,7 +27,10 @@ const TaskSpace = (props: TaskSpaceProps) => {
             </div>
             <div className='task__space__tasks'>
                 {props.tasks.map(task => {
-                    return <Task key={task.id} id={task.id} content={task.content}/>
+                    return <Task key={task.id}
+                                 task={task}
+                                 onDeleteTask={props.onDeleteTask}
+                                 onUpdateStatusTask={props.onUpdateStatusTask}/>
                 })}
             </div>
         </div>

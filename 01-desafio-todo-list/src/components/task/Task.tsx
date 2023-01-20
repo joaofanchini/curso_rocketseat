@@ -1,32 +1,36 @@
 import './Task.css'
 import {Trash} from "phosphor-react";
-import {useState} from "react";
+import {TaskInterface} from "../../App";
 
 export interface TaskProps {
-    id: number,
-    content: string
+    task: TaskInterface,
+    onDeleteTask: (task: TaskInterface) => void,
+    onUpdateStatusTask: (task: TaskInterface) => void
 }
 
 const Task = (props: TaskProps) => {
 
-    const [isChecked, setIsChecked] = useState(false);
-
     const isCheckedHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setIsChecked(event.target.checked);
+        props.onUpdateStatusTask(props.task);
+    }
+
+    const handlerOnDeleteTask = (event: any) => {
+        props.onDeleteTask(props.task);
     }
 
     return <div className='task'>
         <div className='task__container_fieldset'>
             <fieldset className='task__fieldset'>
-                <input type='checkbox' id={props.id.toString()} name={props.id.toString()}
-                       checked={isChecked}
+                <input type='checkbox' id={props.task.id.toString()} name={props.task.id.toString()}
+                       checked={!props.task.isActive}
                        onChange={isCheckedHandler}
                 />
-                <label className='cb-label' htmlFor={props.id.toString()}></label>
+                <label className='cb-label' htmlFor={props.task.id.toString()}></label>
             </fieldset>
-            <span className={`task__description ${isChecked ? 'task__description--scratched' : ''}`}>{props.content}</span>
+            <span
+                className={`task__description ${!props.task.isActive ? 'task__description--scratched' : ''}`}>{props.task.content}</span>
         </div>
-        <Trash className='task__icon' size={24}></Trash>
+        <Trash className='task__icon' size={24} onClick={handlerOnDeleteTask}></Trash>
     </div>
 }
 
