@@ -3,8 +3,8 @@ import {Trash} from "phosphor-react";
 import {useState} from "react";
 
 export interface TaskProps {
-    id: string,
-    description: string
+    id: number,
+    content: string
 }
 
 const Task = (props: TaskProps) => {
@@ -18,13 +18,13 @@ const Task = (props: TaskProps) => {
     return <div className='task'>
         <div className='task__container_fieldset'>
             <fieldset className='task__fieldset'>
-                <input type='checkbox' id={props.id} name={props.id}
+                <input type='checkbox' id={props.id.toString()} name={props.id.toString()}
                        checked={isChecked}
                        onChange={isCheckedHandler}
                 />
-                <label className='cb-label' htmlFor={props.id}></label>
+                <label className='cb-label' htmlFor={props.id.toString()}></label>
             </fieldset>
-            <span className={`task__description ${isChecked ? 'task__description--scratched' : ''}`}>{props.description}</span>
+            <span className={`task__description ${isChecked ? 'task__description--scratched' : ''}`}>{props.content}</span>
         </div>
         <Trash className='task__icon' size={24}></Trash>
     </div>

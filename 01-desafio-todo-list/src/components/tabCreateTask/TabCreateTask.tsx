@@ -2,16 +2,37 @@ import './TabCreateTask.css'
 
 import Input from "../../shared/input/Input";
 import Button from "../../shared/button/Button";
+import React, {ChangeEvent, useState} from "react";
 
 interface TabCreateTaskProps {
-    applyNegativeMargin?:boolean
+    applyNegativeMargin?: boolean
+    onCreateNewTask: (contentTask: string) => void
 }
 
 const TabCreateTask = (props: TabCreateTaskProps) => {
-    return <div className={`tab__create__task ${!!props.applyNegativeMargin && 'margin-top-negative-3'}`}
-    >
-        <Input placeholder='Adicione uma nova tarefa'/>
-        <Button description='Criar'/>
+
+    const [newTask, setNewTask] = useState<string>('');
+
+    const buttonCreteNewTaskDisabled = !newTask || newTask.trim().length <= 0;
+
+
+    const handlerNewTask = (event: ChangeEvent<HTMLInputElement>) => {
+        setNewTask(event.target.value);
+    }
+
+    const handlerCreateNewTask = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        props.onCreateNewTask(newTask);
+    }
+
+    return <div className={`tab__create__task ${!!props.applyNegativeMargin && 'margin-top-negative-3'}`}>
+        <Input placeholder='Adicione uma nova tarefa'
+               value={newTask}
+               onChange={handlerNewTask}
+        />
+        <Button description='Criar'
+                onClick={handlerCreateNewTask}
+                disabled={buttonCreteNewTaskDisabled}
+        />
     </div>
 }
 

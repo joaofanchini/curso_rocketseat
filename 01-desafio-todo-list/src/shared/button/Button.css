@@ -13,12 +13,17 @@ button.custom__button{
     height: 52px;
 }
 
+button.custom__button:disabled{
+    background-color: var(--gray-400);
+    cursor: not-allowed;
+}
+
 button.custom__button svg {
     height: 24px;
     width: 24px;
 }
 
-button.custom__button:hover {
+button.custom__button:hover:enabled {
     background-color: var(--blue);
 }
 
