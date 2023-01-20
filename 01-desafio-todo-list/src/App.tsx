@@ -1,12 +1,12 @@
-import Input from "./shared/input/Input";
-import Task from "./components/task/Task";
-import Button from "./shared/button/Button";
+import Header from "./components/header/Header";
+import TabCreateTask from "./components/tabCreateTask/TabCreateTask";
+import TaskSpace from "./components/taskSpace/TaskSpace";
 
 function App() {
     return <>
-        <center><Input></Input></center>
-        <center><Task id='id' description='texto'></Task></center>
-        <center><Button value={`Texto`}></Button></center>
+        <Header/>
+        <TabCreateTask/>
+        <TaskSpace/>
     </>;
 }
 

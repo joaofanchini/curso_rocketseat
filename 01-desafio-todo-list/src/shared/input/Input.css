@@ -6,6 +6,7 @@ input.custom__input{
     line-height: 1.4;
     border: 0;
     margin: 1rem;
+    width: 38rem;
 }
 
 input.custom__input:focus {
