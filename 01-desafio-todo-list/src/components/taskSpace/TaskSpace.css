@@ -27,7 +27,7 @@ div.task__space__header {
     width: 100%;
 }
 
-div.task__space__tasks{
+div.task__space__tasks {
     display: flex;
     flex-direction: column;
     align-items: center;

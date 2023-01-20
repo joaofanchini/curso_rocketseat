@@ -1,0 +1,18 @@
+div.task__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    font-weight: bold;
+}
+
+span.task__info__text {
+    color: var(--blue);
+}
+
+span.task__info__counter {
+    background-color: var(--gray-400);
+    border-radius: 999px;
+    padding: .125rem .5rem;
+}
