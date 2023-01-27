@@ -10,7 +10,7 @@ const Router = () => {
         {/*O componente DefaultLayout nada mais é do que um modo de criar um fragment do código.
         Note que "/" possui o sentido semantico de ser o não possui rota. Todas as rotas são alinhadas,
         logo que dizer que para chamar o componente "History", precisa passar primeiro o path do componente
-        "DefaultLayout" e então passar o path do componente "History"*/}
+        "DefaultLayout" e então passar o path do elemento "History"*/}
         <Route path="/" element={<DefaultLayout/>}>
             {/*Componete que realiza o roteamento*/}
             <Route path="/" element={<Home/>}/>

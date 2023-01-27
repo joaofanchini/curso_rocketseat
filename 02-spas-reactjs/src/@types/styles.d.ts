@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 import 'styled-components';
 
 import {defaultTheme} from "../theme/default";
