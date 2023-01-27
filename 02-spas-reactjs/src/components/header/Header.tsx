@@ -1,11 +1,13 @@
+// @ts-ignore
+import logoTimer from '../../assets/logo-timer.svg';
+
 import {HeaderContainer} from "./HeaderStyles";
 import {Scroll, Timer} from "phosphor-react";
 import {NavLink} from "react-router-dom";
-import Home from "../../router/pages/Home";
 
 const Header = () => {
     return <HeaderContainer>
-        <span>logo</span>
+        <img src={logoTimer} alt='Logo do timer'/>
         <nav>
             {/*Componente do react-router-dom para interagir com o elemento Anchor*/}
             <NavLink to={'/'}><Timer size={24}/></NavLink>
