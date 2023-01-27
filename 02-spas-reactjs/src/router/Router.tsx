@@ -12,6 +12,7 @@ const Router = () => {
         logo que dizer que para chamar o componente "History", precisa passar primeiro o path do componente
         "DefaultLayout" e então passar o path do componente "History"*/}
         <Route path="/" element={<DefaultLayout/>}>
+            {/*Componete que realiza o roteamento*/}
             <Route path="/" element={<Home/>}/>
             <Route path="/history" element={<History/>}/>
         </Route>
