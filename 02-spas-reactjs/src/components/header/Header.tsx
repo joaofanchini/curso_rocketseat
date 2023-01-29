@@ -1,9 +1,8 @@
-// @ts-ignore
 import logoTimer from '../../assets/logo-timer.svg';
 
-import {HeaderContainer} from "./HeaderStyles";
-import {Scroll, Timer} from "phosphor-react";
-import {NavLink} from "react-router-dom";
+import {HeaderContainer} from './HeaderStyles';
+import {Scroll, Timer} from 'phosphor-react';
+import {NavLink} from 'react-router-dom';
 
 const Header = () => {
     return <HeaderContainer>
@@ -13,7 +12,7 @@ const Header = () => {
             <NavLink to={'/'}><Timer size={24}/></NavLink>
             <NavLink to={'/history'}><Scroll size={24}/></NavLink>
         </nav>
-    </HeaderContainer>
-}
+    </HeaderContainer>;
+};
 
 export default Header;

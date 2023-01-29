@@ -1,10 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import {BrowserRouter} from "react-router-dom";
-import Router from "./router/Router";
-import {ThemeProvider} from "styled-components";
-import {defaultTheme} from "./theme/default";
-import {GlobalStyle} from "./GlobalStyle";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import {BrowserRouter} from 'react-router-dom';
+import Router from './router/Router';
+import {ThemeProvider} from 'styled-components';
+import {defaultTheme} from './theme/default';
+import {GlobalStyle} from './GlobalStyle';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
@@ -21,4 +21,4 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         </ThemeProvider>
     </React.StrictMode>
     ,
-)
+);
