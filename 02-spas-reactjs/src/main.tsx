@@ -10,15 +10,16 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
         {/* Componente de contexto do styled-components que permite o uso de variáveis para
         montar o tema default da aplicação*/}
-        <ThemeProvider theme={defaultTheme}>
-            {/* Componente criado utilizando o createGlobalStyle do styled-components. Ele é um
+        <BrowserRouter>
+            <ThemeProvider theme={defaultTheme}>
+                {/* Componente criado utilizando o createGlobalStyle do styled-components. Ele é um
             componente de contexto também e precisa ser aplicando no componente ThemeProvider*/}
-            <GlobalStyle/>
-            {/*Componente de contexto que permite o roteamento pelo react-router-dom*/}
-            <BrowserRouter>
+                <GlobalStyle/>
+                {/*Componente de contexto que permite o roteamento pelo react-router-dom*/}
                 <Router/>
-            </BrowserRouter>
-        </ThemeProvider>
+            </ThemeProvider>
+        </BrowserRouter>
+
     </React.StrictMode>
     ,
 );
