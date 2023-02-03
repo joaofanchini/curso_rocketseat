@@ -26,3 +26,5 @@ UNCONTROLLED nós obtedos os valores dos inputs somente quando precisamos. É o 
 com formulários.
 
 ** As bibliotecas também fazem essa separação de lógica para combinar componentes.
+
+Context API
